@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "Calculation.h"
 @interface ViewController ()
 
 @end
@@ -18,9 +18,36 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    NSLog(@"111");
-    NSLog(@"222");
+    [self test1];
+    [self test2];
+}
 
+
+/**
+ 链式的用法
+ */
+- (void)test1 {
+    int result  = [Calculation makeCalculation:^(Calculation *make) {
+        
+        make.add(10).muilt(20);
+    }];
+    NSLog(@"%d",result);
+}
+
+/**
+ 函数式的用法
+ */
+- (void)test2 {
+    
+    Calculation *ca = [Calculation.alloc init];
+    
+   BOOL equal = [[[ca calculation:^int(int result) {
+        return result + 2;
+    }] equal:^BOOL(int result) {
+        return result == 2;
+    }] equal];
+    
+    NSLog(@"%d",equal);
 }
 
 

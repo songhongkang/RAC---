@@ -13,6 +13,7 @@
 		C6514990230C49D7003D5D38 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C651498F230C49D7003D5D38 /* Assets.xcassets */; };
 		C6514993230C49D7003D5D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6514991230C49D7003D5D38 /* LaunchScreen.storyboard */; };
 		C6514996230C49D7003D5D38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6514995230C49D7003D5D38 /* main.m */; };
+		C651499E230C4C89003D5D38 /* Calculation.m in Sources */ = {isa = PBXBuildFile; fileRef = C651499C230C4C89003D5D38 /* Calculation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		C6514992230C49D7003D5D38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C6514994230C49D7003D5D38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C6514995230C49D7003D5D38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C651499C230C4C89003D5D38 /* Calculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculation.m; sourceTree = "<group>"; };
+		C651499D230C4C89003D5D38 /* Calculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculation.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 		C6514985230C49D6003D5D38 /* RAC_Demo_0 */ = {
 			isa = PBXGroup;
 			children = (
+				C651499D230C4C89003D5D38 /* Calculation.h */,
+				C651499C230C4C89003D5D38 /* Calculation.m */,
 				C6514986230C49D6003D5D38 /* AppDelegate.h */,
 				C6514987230C49D6003D5D38 /* AppDelegate.m */,
 				C6514989230C49D6003D5D38 /* ViewController.h */,
@@ -144,6 +149,7 @@
 				C651498B230C49D6003D5D38 /* ViewController.m in Sources */,
 				C6514996230C49D7003D5D38 /* main.m in Sources */,
 				C6514988230C49D6003D5D38 /* AppDelegate.m in Sources */,
+				C651499E230C4C89003D5D38 /* Calculation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
