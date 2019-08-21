@@ -20,6 +20,8 @@
     
     [self test1];
     [self test2];
+    
+    NSLog(@"1111");
 }
 
 
