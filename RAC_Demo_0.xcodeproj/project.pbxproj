@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		C6514993230C49D7003D5D38 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6514991230C49D7003D5D38 /* LaunchScreen.storyboard */; };
 		C6514996230C49D7003D5D38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C6514995230C49D7003D5D38 /* main.m */; };
 		C651499E230C4C89003D5D38 /* Calculation.m in Sources */ = {isa = PBXBuildFile; fileRef = C651499C230C4C89003D5D38 /* Calculation.m */; };
+		C65149A1230EE61A003D5D38 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C65149A0230EE61A003D5D38 /* ViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,9 @@
 		C6514995230C49D7003D5D38 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C651499C230C4C89003D5D38 /* Calculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculation.m; sourceTree = "<group>"; };
 		C651499D230C4C89003D5D38 /* Calculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculation.h; sourceTree = "<group>"; };
+		C651499F230EE61A003D5D38 /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		C65149A0230EE61A003D5D38 /* ViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
+		C65149A2230EE628003D5D38 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FF7AAE7F08C17345900D1438 /* Pods_RAC_Demo_0.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RAC_Demo_0.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -87,6 +91,9 @@
 				C6514991230C49D7003D5D38 /* LaunchScreen.storyboard */,
 				C6514994230C49D7003D5D38 /* Info.plist */,
 				C6514995230C49D7003D5D38 /* main.m */,
+				C651499F230EE61A003D5D38 /* ViewModel.h */,
+				C65149A0230EE61A003D5D38 /* ViewModel.m */,
+				C65149A2230EE628003D5D38 /* PrefixHeader.pch */,
 			);
 			path = RAC_Demo_0;
 			sourceTree = "<group>";
@@ -97,7 +104,6 @@
 				6104F34FB7A5DEFD9857F3A8 /* Pods-RAC_Demo_0.debug.xcconfig */,
 				8B6B6292C845B594BBA79B6C /* Pods-RAC_Demo_0.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -217,6 +223,7 @@
 			files = (
 				C651498B230C49D6003D5D38 /* ViewController.m in Sources */,
 				C6514996230C49D7003D5D38 /* main.m in Sources */,
+				C65149A1230EE61A003D5D38 /* ViewModel.m in Sources */,
 				C6514988230C49D6003D5D38 /* AppDelegate.m in Sources */,
 				C651499E230C4C89003D5D38 /* Calculation.m in Sources */,
 			);
@@ -362,6 +369,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/songhongkang/Desktop/RAC_Demo_0/RAC_Demo_0/PrefixHeader.pch;
 				INFOPLIST_FILE = RAC_Demo_0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,6 +388,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = /Users/songhongkang/Desktop/RAC_Demo_0/RAC_Demo_0/PrefixHeader.pch;
 				INFOPLIST_FILE = RAC_Demo_0/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

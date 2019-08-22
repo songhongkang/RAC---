@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "Calculation.h"
 #import <Masonry/Masonry.h>
-#import <ReactiveObjC/ReactiveObjC.h>
+#import "ViewModel.h"
 
 @interface ViewController () <UITextFieldDelegate,UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *textField;
@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) RACDisposable *disposable;
 @property (nonatomic, strong) NSMutableDictionary <NSString *,RACDisposable *>*timerDic;
+
+@property (nonatomic, strong) ViewModel *viewModel;
 @end
 
 @implementation ViewController
@@ -25,17 +27,60 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self test1];
-    [self test2];
+//    [self test1];
+//    [self test2];
     
 //    NSLog(@"1111");
-    [self kvo];
-    [self targetAction];
-    [self notification];
-    [self delegate];
-    [self tap];
-    [self timer];
-    [self signalForSelector];
+//    [self kvo];
+//    [self targetAction];
+//    [self notification];
+//    [self delegate];
+//    [self tap];
+//    [self timer];
+//    [self signalForSelector];
+//    [self signal];
+    [self fetch1];
+}
+
+- (void)fetch1
+{
+//    [[self.viewModel request1] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"%@",x);
+//    }];
+//    [[[self.viewModel request1] zipWith:[self.viewModel request2]] subscribeNext:^(id  _Nullable x) {
+//        RACTupleUnpack(NSString * key,NSString * value) = x;
+//        NSLog(@"key:%@\nvalue:%@",key,value);
+//    }];
+    
+//    [[[self.viewModel request1] zipWith:[self.viewModel request2]] subscribeNext:^(id  _Nullable x) {
+//        NSLog(@"x");
+//    } error:^(NSError * _Nullable error) {
+//        NSLog(@"%@",error);
+//    }];
+    
+    [[[self.viewModel request1] concat:[self.viewModel request2]] subscribeNext:^(id  _Nullable x) {
+            NSLog(@"%@",x);
+    } error:^(NSError * _Nullable error) {
+            NSLog(@"%@",error);
+    }];
+    
+}
+
+
+- (void)signal
+{
+    RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+        [subscriber sendNext:@"111"];
+        return nil;
+    }];
+    
+    [signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"-----%@",x);
+    }];
+    
+    [signal subscribeNext:^(id  _Nullable x) {
+        NSLog(@"-------%@",x);
+    }];
 }
 
 - (void)tap {
@@ -179,5 +224,13 @@
         _timerDic = [NSMutableDictionary dictionary];
     }
     return _timerDic;
+}
+
+- (ViewModel *)viewModel
+{
+    if (_viewModel == nil) {
+        _viewModel = [[ViewModel alloc] init];
+    }
+    return _viewModel;
 }
 @end
