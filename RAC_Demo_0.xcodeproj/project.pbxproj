@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2BCDE6E39D83E1E3353515BA /* Pods_RAC_Demo_0.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF7AAE7F08C17345900D1438 /* Pods_RAC_Demo_0.framework */; };
+		C649A5712316CA1C003DBB29 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C649A5702316CA1C003DBB29 /* TestViewController.m */; };
 		C6514988230C49D6003D5D38 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6514987230C49D6003D5D38 /* AppDelegate.m */; };
 		C651498B230C49D6003D5D38 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C651498A230C49D6003D5D38 /* ViewController.m */; };
 		C651498E230C49D6003D5D38 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C651498C230C49D6003D5D38 /* Main.storyboard */; };
@@ -21,6 +22,8 @@
 /* Begin PBXFileReference section */
 		6104F34FB7A5DEFD9857F3A8 /* Pods-RAC_Demo_0.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAC_Demo_0.debug.xcconfig"; path = "Target Support Files/Pods-RAC_Demo_0/Pods-RAC_Demo_0.debug.xcconfig"; sourceTree = "<group>"; };
 		8B6B6292C845B594BBA79B6C /* Pods-RAC_Demo_0.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RAC_Demo_0.release.xcconfig"; path = "Target Support Files/Pods-RAC_Demo_0/Pods-RAC_Demo_0.release.xcconfig"; sourceTree = "<group>"; };
+		C649A56F2316CA1C003DBB29 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		C649A5702316CA1C003DBB29 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		C6514983230C49D6003D5D38 /* RAC_Demo_0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RAC_Demo_0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6514986230C49D6003D5D38 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C6514987230C49D6003D5D38 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,6 +97,8 @@
 				C651499F230EE61A003D5D38 /* ViewModel.h */,
 				C65149A0230EE61A003D5D38 /* ViewModel.m */,
 				C65149A2230EE628003D5D38 /* PrefixHeader.pch */,
+				C649A56F2316CA1C003DBB29 /* TestViewController.h */,
+				C649A5702316CA1C003DBB29 /* TestViewController.m */,
 			);
 			path = RAC_Demo_0;
 			sourceTree = "<group>";
@@ -221,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C649A5712316CA1C003DBB29 /* TestViewController.m in Sources */,
 				C651498B230C49D6003D5D38 /* ViewController.m in Sources */,
 				C6514996230C49D7003D5D38 /* main.m in Sources */,
 				C65149A1230EE61A003D5D38 /* ViewModel.m in Sources */,

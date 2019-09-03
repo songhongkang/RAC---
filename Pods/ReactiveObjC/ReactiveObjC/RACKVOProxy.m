@@ -56,11 +56,11 @@
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	NSValue *valueContext = [NSValue valueWithPointer:context];
 	__block NSObject *trueObserver;
+    NSLog(@"change:%@",change);
 
 	dispatch_sync(self.queue, ^{
 		trueObserver = [self.trampolines objectForKey:valueContext];
 	});
-
 	if (trueObserver != nil) {
 		[trueObserver observeValueForKeyPath:keyPath ofObject:object change:change context:context];
 	}

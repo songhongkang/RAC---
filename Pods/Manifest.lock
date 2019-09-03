@@ -1,20 +1,24 @@
 PODS:
+  - LookinServer (0.9.3)
   - Masonry (1.1.0)
   - ReactiveObjC (3.1.1)
 
 DEPENDENCIES:
+  - LookinServer
   - Masonry
   - ReactiveObjC
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - LookinServer
     - Masonry
     - ReactiveObjC
 
 SPEC CHECKSUMS:
+  LookinServer: 44f1b5f32743dc61068a156ff86b5b47d0a82943
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
 
-PODFILE CHECKSUM: 106a634f8a9c173bc337aaaf7eb3252c6db02f55
+PODFILE CHECKSUM: 91265fb9ce1452ea52466955c1cce2a74c87e2c4
 
 COCOAPODS: 1.7.3

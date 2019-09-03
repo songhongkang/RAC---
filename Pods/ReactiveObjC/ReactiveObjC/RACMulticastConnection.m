@@ -51,8 +51,13 @@
 #pragma mark Connecting
 
 - (RACDisposable *)connect {
-	BOOL shouldConnect = OSAtomicCompareAndSwap32Barrier(0, 1, &_hasConnected);
+    
+//    bool    OSAtomicCompareAndSwap32Barrier( int32_t __oldValue, int32_t __newValue, volatile int32_t *__theValue );
 
+    
+	BOOL shouldConnect = OSAtomicCompareAndSwap32Barrier(0, 1, &_hasConnected);
+    /// self.sourceSignal  就是外面的 signal
+    /// _signal  内部创建的RACSubject
 	if (shouldConnect) {
 		self.serialDisposable.disposable = [self.sourceSignal subscribe:_signal];
 	}

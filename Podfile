@@ -8,4 +8,6 @@ target 'RAC_Demo_0' do
   # Pods for RAC_Demo_0
 pod 'Masonry'
 pod 'ReactiveObjC'
+pod 'LookinServer', :configurations => ['Debug']
+pod 'YYKit'
 end

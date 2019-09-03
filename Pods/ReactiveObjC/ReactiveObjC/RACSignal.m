@@ -28,6 +28,7 @@
 #pragma mark Lifecycle
 
 + (RACSignal *)createSignal:(RACDisposable * (^)(id<RACSubscriber> subscriber))didSubscribe {
+    HY_Log(@"被执行了");
 	return [RACDynamicSignal createSignal:didSubscribe];
 }
 
@@ -92,19 +93,6 @@
 
 - (RACSignal *)bind:(RACSignalBindBlock (^)(void))block {
 	NSCParameterAssert(block != NULL);
-
-	/*
-	 * -bind: should:
-	 * 
-	 * 1. Subscribe to the original signal of values.
-	 * 2. Any time the original signal sends a value, transform it using the binding block.
-	 * 3. If the binding block returns a signal, subscribe to it, and pass all of its values through to the subscriber as they're received.
-	 * 4. If the binding block asks the bind to terminate, complete the _original_ signal.
-	 * 5. When _all_ signals complete, send completed to the subscriber.
-	 * 
-	 * If any signal sends an error at any point, send that to the subscriber.
-	 */
-
 	return [[RACSignal createSignal:^(id<RACSubscriber> subscriber) {
 		RACSignalBindBlock bindingBlock = block();
 

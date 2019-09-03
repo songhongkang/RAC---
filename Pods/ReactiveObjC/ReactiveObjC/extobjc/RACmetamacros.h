@@ -42,6 +42,21 @@
 #define metamacro_argcount(...) \
         metamacro_at(20, __VA_ARGS__, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
 
+
+#define metamacro_at(N, ...) \
+metamacro_concat(metamacro_at, N)(__VA_ARGS__)
+//@"1".@"2"                       20, 19, 18, 17, 16, 15, 14, 13, 12, 11
+//#define metamacro_at20(_0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, ...) metamacro_head(__VA_ARGS__)
+//     10,  9,  8,   7,    6,   5,  4,  3,  2 ,1
+
+//#define metamacro_head(...) \
+//metamacro_head_(__VA_ARGS__, 0)
+
+//#define metamacro_head_(FIRST, ...) FIRST
+
+
+//metamacro_at(20, self, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1)
+
 /**
  * Identical to #metamacro_foreach_cxt, except that no CONTEXT argument is
  * given. Only the index and current argument will thus be passed to MACRO.
@@ -57,8 +72,24 @@
  *
  * Inspired by P99: http://p99.gforge.inria.fr
  */
+//`__VA_ARGS__` 就是`self`
 #define metamacro_foreach_cxt(MACRO, SEP, CONTEXT, ...) \
         metamacro_concat(metamacro_foreach_cxt, metamacro_argcount(__VA_ARGS__))(MACRO, SEP, CONTEXT, __VA_ARGS__)
+
+
+#define rac_weakify_(INDEX, CONTEXT, VAR) \
+CONTEXT __typeof__(VAR) metamacro_concat(VAR, _weak_) = (VAR);
+
+
+
+//#define weakify(...) \
+//rac_keywordify \
+//metamacro_foreach_cxt(rac_weakify_,, __weak, __VA_ARGS__)
+
+
+//rac_weakify_
+
+//#define metamacro_foreach_cxt1(MACRO, SEP, CONTEXT, _0) MACRO(0, CONTEXT, _0)
 
 /**
  * Identical to #metamacro_foreach_cxt. This can be used when the former would

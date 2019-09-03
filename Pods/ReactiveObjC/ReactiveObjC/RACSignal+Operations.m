@@ -952,6 +952,11 @@ static RACDisposable *subscribeForever (RACSignal *signal, void (^next)(id), voi
 
 - (RACMulticastConnection *)multicast:(RACSubject *)subject {
 	[subject setNameWithFormat:@"[%@] -multicast: %@", self.name, subject.name];
+    
+//    _sourceSignal = source;
+//    _serialDisposable = [[RACSerialDisposable alloc] init];
+//    _signal = subject;
+    
 	RACMulticastConnection *connection = [[RACMulticastConnection alloc] initWithSourceSignal:self subject:subject];
 	return connection;
 }

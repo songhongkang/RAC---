@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-RAC_Demo_0/Pods-RAC_Demo_0-frameworks.sh
+${PODS_ROOT}/LookinServer/LookinServer.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework

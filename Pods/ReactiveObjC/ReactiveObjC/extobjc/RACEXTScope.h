@@ -45,6 +45,22 @@
 #define weakify(...) \
     rac_keywordify \
     metamacro_foreach_cxt(rac_weakify_,, __weak, __VA_ARGS__)
+//MACRO ---rac_weakify_
+// SEP --- ''
+// CONTEXT __weak
+
+//#define metamacro_foreach_cxt(MACRO, SEP, CONTEXT, ...) \
+
+//#define rac_weakify_(INDEX, CONTEXT, VAR) \
+//CONTEXT __typeof__(VAR) metamacro_concat(VAR, _weak_) = (VAR);
+
+//__weak __typeof__(self) self_weak_ = self;
+
+#define metamacro_foreach_cxt1(MACRO, SEP, CONTEXT, _0) MACRO(0, CONTEXT, _0)
+
+//#define metamacro_foreach_cxt(MACRO, SEP, CONTEXT, ...) \
+//metamacro_concat(metamacro_foreach_cxt, metamacro_argcount(__VA_ARGS__))(MACRO, SEP, CONTEXT, __VA_ARGS__)
+
 
 /**
  * Like #weakify, but uses \c __unsafe_unretained instead, for targets or

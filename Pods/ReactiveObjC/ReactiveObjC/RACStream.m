@@ -72,12 +72,10 @@
 
 - (__kindof RACStream *)flattenMap:(__kindof RACStream * (^)(id value))block {
 	Class class = self.class;
-
 	return [[self bind:^{
 		return ^(id value, BOOL *stop) {
-			id stream = block(value) ?: [class empty];
+            id stream = block(value) ?: [class empty];
 			NSCAssert([stream isKindOfClass:RACStream.class], @"Value returned from -flattenMap: is not a stream: %@", stream);
-
 			return stream;
 		};
 	}] setNameWithFormat:@"[%@] -flattenMap:", self.name];
@@ -91,10 +89,9 @@
 
 - (__kindof RACStream *)map:(id (^)(id value))block {
 	NSCParameterAssert(block != nil);
-
 	Class class = self.class;
-	
 	return [[self flattenMap:^(id value) {
+        /// 静态方法 `return`是一个方法
 		return [class return:block(value)];
 	}] setNameWithFormat:@"[%@] -map:", self.name];
 }
